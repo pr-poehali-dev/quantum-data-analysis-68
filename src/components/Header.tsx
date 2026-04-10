@@ -33,16 +33,16 @@ export function Header() {
     >
       <nav className="container mx-auto px-6 flex items-center justify-between md:px-[24]">
         <a href="/" className="flex items-center gap-2 group" onClick={scrollToTop}>
-          <img src="/images/hously-logo.svg" alt="Пространство" width={120} height={32} className="w-auto h-6" />
+          <span className="text-white font-bold text-lg tracking-tight leading-tight">КРЫМ<br className="hidden" /> АВТО ХОЛДИНГ</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-10 text-sm tracking-wide">
           {[
-            { label: "Главная", href: "#hero" },
-            { label: "Философия", href: "#about" },
-            { label: "Проекты", href: "#projects" },
+            { label: "О нас", href: "#about" },
             { label: "Услуги", href: "#services" },
-            { label: "Вопросы", href: "#faq" },
+            { label: "Преимущества", href: "#projects" },
+            { label: "Отзывы", href: "#faq" },
+            { label: "Контакты", href: "#contact" },
           ].map((item) => (
             <li key={item.label}>
               <a
@@ -56,6 +56,12 @@ export function Header() {
         </ul>
 
         <a
+          href="tel:+79180151015"
+          className="hidden md:inline-flex items-center gap-2 text-sm text-white font-medium mr-4 hover:text-orange-300 transition-colors"
+        >
+          +7 (918) 015 10 15
+        </a>
+        <a
           href="#contact"
           className={cn(
             "hidden md:inline-flex items-center gap-2 text-sm px-5 py-2.5 transition-all duration-300",
@@ -64,7 +70,7 @@ export function Header() {
               : "bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white",
           )}
         >
-          Связаться
+          Записаться на сервис
         </a>
 
         <button
@@ -95,11 +101,11 @@ export function Header() {
         <div className="container mx-auto px-6">
           <ul className="flex flex-col gap-6 mb-8">
             {[
-              { label: "Главная", href: "#hero" },
-              { label: "Философия", href: "#about" },
-              { label: "Проекты", href: "#projects" },
+              { label: "О нас", href: "#about" },
               { label: "Услуги", href: "#services" },
-              { label: "Вопросы", href: "#faq" },
+              { label: "Преимущества", href: "#projects" },
+              { label: "Отзывы", href: "#faq" },
+              { label: "Контакты", href: "#contact" },
             ].map((item) => (
               <li key={item.label}>
                 <a
@@ -114,11 +120,18 @@ export function Header() {
           </ul>
 
           <a
+            href="tel:+79180151015"
+            className="block text-white text-xl mb-4"
+            onClick={closeMobileMenu}
+          >
+            +7 (918) 015 10 15
+          </a>
+          <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 text-sm px-5 py-2.5 bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white transition-all duration-300 mb-4"
             onClick={closeMobileMenu}
           >
-            Связаться
+            Записаться на сервис
           </a>
         </div>
       </div>

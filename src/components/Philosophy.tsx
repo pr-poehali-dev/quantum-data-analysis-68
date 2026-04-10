@@ -3,23 +3,24 @@ import { HighlightedText } from "./HighlightedText"
 
 const philosophyItems = [
   {
-    title: "Минимализм со смыслом",
+    title: "Официальный дилер",
     description:
-      "Каждый элемент имеет свое назначение и пространство для дыхания. Мы убираем лишнее, чтобы раскрыть то, что действительно важно.",
+      "Мы — официальный дилер Volkswagen, EXEED и EXLANTIX в Севастополе и Крыму. Гарантируем подлинность запчастей и соответствие заводским стандартам обслуживания.",
   },
   {
-    title: "Архитектурный подход",
+    title: "Сертифицированные специалисты",
     description:
-      "Планировки, вдохновленные структурой, ритмом и материальностью. Здания, которые говорят через пропорции и свет.",
+      "Все мастера проходят регулярное обучение у производителей. Ваш автомобиль в руках профессионалов, аттестованных VW, EXEED и EXLANTIX.",
   },
   {
-    title: "Естественная динамика",
+    title: "Современное оборудование",
     description:
-      "Движение поддерживает восприятие, но никогда не отвлекает. Анимация, которая ощущается естественно, как свет, скользящий по комнате.",
+      "Ремонтная зона оснащена гидропневматическими подъёмниками, профессиональным диагностическим стендом и фирменным инструментом.",
   },
   {
-    title: "Вневременная эстетика",
-    description: "Элегантный, спокойный и долговечный визуальный язык. Дизайн, который превосходит тренды и стареет с достоинством.",
+    title: "История обслуживания",
+    description:
+      "Сохраняем полную историю каждого автомобиля — вы всегда знаете, что было сделано, когда и на каком пробеге. Это ценность при продаже.",
   },
 ]
 
@@ -51,28 +52,37 @@ export function Philosophy() {
     <section id="about" className="py-32 md:py-29">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Left column - Title and image */}
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Наша философия</p>
+            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">О компании</p>
             <h2 className="text-6xl md:text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
-              Дизайн с
+              15 лет
               <br />
-              <HighlightedText>намерением</HighlightedText>
+              <HighlightedText>опыта</HighlightedText>
             </h2>
 
-            <div className="relative hidden lg:block">
-              <img
-                src="/images/exterior.png"
-                alt="Архитектурный эскиз рабочего пространства"
-                className="opacity-90 relative z-10 w-auto"
-              />
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              <div className="bg-secondary/50 p-6 rounded-sm">
+                <div className="text-4xl font-bold text-foreground mb-1">15+</div>
+                <div className="text-muted-foreground text-sm">лет на рынке</div>
+              </div>
+              <div className="bg-secondary/50 p-6 rounded-sm">
+                <div className="text-4xl font-bold text-foreground mb-1">3</div>
+                <div className="text-muted-foreground text-sm">бренда: VW, EXEED, EXLANTIX</div>
+              </div>
+              <div className="bg-secondary/50 p-6 rounded-sm">
+                <div className="text-4xl font-bold text-foreground mb-1">35%</div>
+                <div className="text-muted-foreground text-sm">экономия по программе лояльности</div>
+              </div>
+              <div className="bg-secondary/50 p-6 rounded-sm">
+                <div className="text-4xl font-bold text-foreground mb-1">100%</div>
+                <div className="text-muted-foreground text-sm">оригинальные запчасти</div>
+              </div>
             </div>
           </div>
 
-          {/* Right column - Description and Philosophy items */}
           <div className="space-y-6 lg:pt-48">
             <p className="text-muted-foreground text-lg leading-relaxed max-w-md mb-12">
-              Архитектура - это больше, чем конструкция. Это то, как мы воспринимаем мир. Мы создаем пространства, которые питают человеческий дух.
+              Наша компания — официальный дилер VW, EXEED, EXLANTIX в Севастополе и Крыму. Мы ремонтируем автомобили так, как того требует производитель — с оригинальными деталями, сертифицированными специалистами и гарантией на каждую работу.
             </p>
 
             {philosophyItems.map((item, index) => (

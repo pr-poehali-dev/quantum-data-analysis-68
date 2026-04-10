@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { ArrowDown } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null)
@@ -120,10 +121,11 @@ export function Hero() {
     <section id="hero" ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hously-background.png"
-          alt="Минималистичный архитектурный интерьер"
+          src="https://cdn.poehali.dev/projects/c667a8ad-8d26-4eb2-80cb-f9f7b5f28ac0/files/ca466bca-0cd8-4647-8e9f-53aa936db222.jpg"
+          alt="Сервисный центр Крым Авто Холдинг"
           className="w-full h-full object-cover object-center"
         />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       <div
@@ -137,25 +139,38 @@ export function Hero() {
         }}
       >
         <div className="mb-72 md:mb-60 lg:mb-80">
-          <p className="text-sm tracking-[0.3em] uppercase text-center text-secondary mb-0">{"Архитектурная студия"}</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-center text-secondary mb-4">{"Официальный дилер · Севастополь и Крым"}</p>
 
           <h1
             ref={titleRef}
-            className="text-7xl font-medium text-balance text-center text-white mb-0 tracking-tight leading-[0.9] lg:text-8xl"
+            className="text-5xl font-medium text-balance text-center text-white mb-6 tracking-tight leading-[1.05] lg:text-7xl"
           >
-            {"Создаем пространства"}
+            {"КРЫМ АВТО ХОЛДИНГ"}
             <br />
-            <span className="text-orange-200">{"для жизни"}</span>
+            <span className="text-orange-300 text-3xl lg:text-5xl font-normal">{"Официальный дилер VW, EXEED, EXLANTIX"}</span>
           </h1>
-        </div>
-      </div>
 
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <img
-          src="/images/hously-foreground.png"
-          alt="Мраморная кухонная столешница"
-          className="w-full h-full object-cover object-center"
-        />
+          <p className="text-white/80 text-center text-lg mb-8 max-w-xl mx-auto">
+            Автосервис с безупречной репутацией и опытом более 15 лет
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-sm font-medium tracking-wide transition-colors duration-300"
+            >
+              <Icon name="Calendar" size={16} />
+              Записаться на сервис
+            </a>
+            <a
+              href="tel:+79180151015"
+              className="inline-flex items-center gap-2 border border-white/40 text-white px-8 py-4 text-sm tracking-wide hover:bg-white/10 transition-colors duration-300"
+            >
+              <Icon name="Phone" size={16} />
+              +7 (918) 015 10 15
+            </a>
+          </div>
+        </div>
       </div>
 
       {animationComplete && (

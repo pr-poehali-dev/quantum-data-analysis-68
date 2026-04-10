@@ -1,30 +1,57 @@
 import { useEffect, useRef, useState } from "react"
-import { Home, Building, Armchair, Trees } from "lucide-react"
 import { HighlightedText } from "./HighlightedText"
+import Icon from "@/components/ui/icon"
 
 const expertiseAreas = [
   {
-    title: "Жилая архитектура",
-    description: "Создаем дома, которые сочетают красоту с комфортом, где каждое пространство служит и форме, и функции.",
-    icon: Home,
+    title: "Ремонт АКПП",
+    description: "Ремонт всех типов автоматических коробок передач. Диагностика, замена масла, капремонт — с гарантией.",
+    icon: "Settings",
   },
   {
-    title: "Коммерческие объекты",
-    description:
-      "Проектируем рабочие пространства, которые вдохновляют на продуктивность и отражают ценности передовых организаций.",
-    icon: Building,
+    title: "Диагностика",
+    description: "Компьютерная диагностика на оригинальном оборудовании VW Group. Выявляем скрытые неисправности.",
+    icon: "ScanLine",
   },
   {
-    title: "Дизайн интерьеров",
-    description:
-      "Создаем интерьеры, которые гармонируют с архитектурной оболочкой, формируя целостный пространственный опыт.",
-    icon: Armchair,
+    title: "ТО и расходники",
+    description: "Плановое техническое обслуживание с использованием оригинальных масел, фильтров и запчастей.",
+    icon: "Wrench",
   },
   {
-    title: "Градостроительство",
-    description:
-      "Формируем сообщества через продуманную интеграцию общественных пространств, зданий и природных элементов.",
-    icon: Trees,
+    title: "Электрооборудование",
+    description: "Диагностика и ремонт электрики, систем управления, датчиков и блоков управления.",
+    icon: "Zap",
+  },
+  {
+    title: "Кузовной ремонт",
+    description: "Устранение вмятин, покраска, восстановление геометрии кузова в фирменной малярной камере.",
+    icon: "Car",
+  },
+  {
+    title: "Шиномонтаж",
+    description: "Сезонная замена шин, балансировка, хранение резины. Подбор колёс под любую модель.",
+    icon: "Circle",
+  },
+  {
+    title: "Двигатель и подвеска",
+    description: "Ремонт двигателя, рулевого управления, подвески, трансмиссии и тормозной системы.",
+    icon: "Cog",
+  },
+  {
+    title: "Тонировка и оклейка",
+    description: "Профессиональная тонировка, защитная оклейка плёнкой, антигравий — сохраним внешний вид.",
+    icon: "Layers",
+  },
+  {
+    title: "Доп. оборудование",
+    description: "Установка сигнализаций, камер, парктроников, фаркопов и любого дополнительного оборудования.",
+    icon: "PlusCircle",
+  },
+  {
+    title: "Проверка перед покупкой",
+    description: "Профессиональная проверка автомобиля с пробегом: диагностика, осмотр кузова, история ТО.",
+    icon: "ClipboardCheck",
   },
 ]
 
@@ -43,7 +70,7 @@ export function Expertise() {
           }
         })
       },
-      { threshold: 0.2 },
+      { threshold: 0.1 },
     )
 
     itemRefs.current.forEach((ref) => {
@@ -57,20 +84,19 @@ export function Expertise() {
     <section id="services" ref={sectionRef} className="py-32 md:py-29">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-20">
-          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Наши услуги</p>
+          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Сервисный центр</p>
           <h2 className="text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
-            <HighlightedText>Экспертиза</HighlightedText>, отточенная
+            <HighlightedText>Услуги</HighlightedText>, которым
             <br />
-            практикой
+            доверяют
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Каждый проект опирается на десятилетия совокупного опыта, создавая архитектуру, которая одновременно инновационна и вневременна.
+            Полный спектр услуг для автомобилей Volkswagen, EXEED и EXLANTIX — и не только. Обслуживаем все марки.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
           {expertiseAreas.map((area, index) => {
-            const Icon = area.icon
             return (
               <div
                 key={area.title}
@@ -81,23 +107,24 @@ export function Expertise() {
                 className={`relative pl-8 border-l border-border transition-all duration-700 ${
                   visibleItems.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                style={{ transitionDelay: `${index * 80}ms` }}
               >
-                <div
-                  className={`transition-all duration-1000 ${
-                    visibleItems.includes(index) ? "animate-draw-stroke" : ""
-                  }`}
-                  style={{
-                    transitionDelay: `${index * 150}ms`,
-                  }}
-                >
-                  <Icon className="w-10 h-10 mb-4 text-foreground" strokeWidth={1.25} />
-                </div>
+                <Icon name={area.icon} className="w-10 h-10 mb-4 text-foreground" fallback="Wrench" />
                 <h3 className="text-xl font-medium mb-4">{area.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{area.description}</p>
               </div>
             )
           })}
+        </div>
+
+        <div className="mt-16 text-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 text-sm font-medium tracking-wide hover:bg-foreground/80 transition-colors duration-300"
+          >
+            <Icon name="Calendar" size={16} fallback="Calendar" />
+            Записаться на сервис
+          </a>
         </div>
       </div>
     </section>
